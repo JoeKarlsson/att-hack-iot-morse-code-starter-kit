@@ -22,8 +22,6 @@ app.use(express.static('./public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
 
-// var text = (process.argv[2] ? process.argv[2] : '').toLowerCase();
-
 // Mapping for english to morse code.
 const MorseCode = {
    pattern: {
@@ -109,7 +107,6 @@ const morseLED = ( text ) => {
 app.route('/morse')
   .post((req, res) => {
     // Split the text input into an array of letters that we can read in
-    console.log(req.body)
     const _t = req.body.message.split('');
     res.redirect('/');
     morseLED( _t );
