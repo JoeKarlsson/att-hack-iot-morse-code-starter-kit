@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IoT Morse Code</title>
+  <link rel="stylesheet" type="text/css" href="/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/skeleton.css">
+</head>
+<body>
+  <div class="section hero">
+    <div class="container">
+      <div class="row">
+        <h1>IoT Morse Code</h1>
+      </div>
+      <div class="row">
+        <form id="morse-form" action="/morse" method="POST" enctype="application/x-www-urlencoded">
+          <label for="message">Message</label>
+          <textarea class="u-full-width" name="message" placeholder="Hello Morse Code" id="message"></textarea>
+
+          <input class="button-primary" type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
