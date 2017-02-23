@@ -1,29 +1,21 @@
-# AT&T Hackathon Raspberry Pi Sound Sensor Data to Websocket Starter Kit
+# AT&T Hackathon IoT Morse Code Emitter Starter Kit
 
-In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We will be writing a simple program in Node.js to listen to a sound sensor and then send that data to a webpage so we can visualize the data live! Sounds cool right?
+In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We will be writing a simple program in Node.js to turn a LED on and off. Then we will extend this logic to build a simple piece of embedded system that can take a piece of string and emit its morse code.
 
-Okay, first of all, what are WebSockets? Well, WebSockets is a technology, based on the ws protocol, that makes it possible to establish a continuous full-duplex connection stream between a client and a server.  A typical websocket client would be a user's browser, but the protocol is platform independent. It is the closest API to a raw network socket in the browser. Except a WebSocket connection is also much more than a network socket, as the browser abstracts all the complexity behind a simple API and provides a number of additional services:
-
-* Connection negotiation and same-origin policy enforcement
-* Interoperability with existing HTTP infrastructure
-* Message-oriented communication and efficient message framing
-* Subprotocol negotiation and extensibility
-
-This is a demo shows a demo of a client connecting to a websocket server and sharing data.
 
 ## Materials
 
 * 1 x Raspberry Pi (We used a Raspberry Pi 3 Model B for this demo)
 * 1 x Breadboard
-* 1 x PCF8591
-* 1 x Sound Sensor Module
-* 1 x 3-Pin anti reverse jumper cable
-* Several M to F jumper cables
+* 1 x 68 Ohms resistor
+* 1 x LED
+* 2 x Female to male wires
 
 ## Schematics
 
-![3](https://cloud.githubusercontent.com/assets/4650739/23232681/4937d5c8-f8f0-11e6-82f6-17ee0f1e27a1.png)
+![screen-shot-2014-10-03-at-5 33 02-pm](https://cloud.githubusercontent.com/assets/4650739/23240667/c6d58c88-f912-11e6-9d88-5577050d35c3.png)
 
+The left end of the above circuit will be connected to Pin 9 – GND pin of pi (Left Column, 5th pin). And the right end of the above circuit will be connected to Pin 11(Left Column, 6th pin).
 
 ## Prerequesites
 
@@ -33,9 +25,9 @@ This is a demo shows a demo of a client connecting to a websocket server and sha
 
 ## Setup Your Project
 
-Download and unpack [the project](https://github.com/devleague/ATT-Hack-RPi-Sound-Sensor-Websocket-Starter-Kit) on your Raspberry Pi in the directory of your choice. Or alternatively checkout from source:
+Download and unpack [the project](https://github.com/devleague/ATT-Hack-IoT-Morse-Code-Starter-Kit) on your Raspberry Pi in the directory of your choice. Or alternatively checkout from source:
 
-    git clone git@github.com:devleague/ATT-Hack-RPi-Sound-Sensor-Websocket-Starter-Kit.git
+    git git@github.com:devleague/ATT-Hack-IoT-Morse-Code-Starter-Kit.git
     cd ATT-Hack-RPi-Sound-Sensor-Websocket-Starter-Kit
 
 Next, inside the project, you need to install the project's various NPM dependencies:
@@ -46,7 +38,9 @@ And you should now be ready to spin up a development build of your new project:
 
     npm start
 
-Navigate to [http://localhost:3001](http://localhost:3001) in your browser of choice.
+Navigate to [http://localhost:3000](http://localhost:3000) in your browser of choice.
+
+Once your breadboard is configured, you should be able to enter a message onto the form and upon submission your Pi will emit your message in morse code :tada:.
 
 ## For use on a Rasperberry Pi
 Since this is the IoT, let us expose our localhost as a publicly accessible URL. For that we will use ngrok.
